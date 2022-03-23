@@ -16,6 +16,16 @@ model.add(Dense(3,activation='softmax'))
 
 model.fit(X, Y, epochs=5)
 
-model.compile(Adam(lr=0.06),'categorical_crossentropy',metrics=['accuracy'])
+history = model.compile(Adam(lr=0.06),'categorical_crossentropy',metrics=['accuracy'])
+
+import matplotlib.pyplot as plt
+
+plt.plot(history.history['accuracy'])
+plt.plot(history.history['val_accuracy'])
+plt.title('model accuracy')
+plt.ylabel('accuracy')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
 
 model.summary()
