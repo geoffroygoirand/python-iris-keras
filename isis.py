@@ -14,7 +14,7 @@ model.add(Dense(10,activation='tanh'))
 model.add(Dense(6,activation='tanh'))
 model.add(Dense(3,activation='softmax'))
 
-model.fit(X,Y, epochs=5)
+model.fit(X, Y, epochs=5)
 
 model.compile(Adam(lr=0.06),'categorical_crossentropy',metrics=['accuracy'])
 
